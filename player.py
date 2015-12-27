@@ -26,7 +26,7 @@ class Player(pygame.sprite.Sprite):
         """
         pygame.sprite.Sprite.__init__(self)
 
-        sprite_sheet = SpriteSheet('p1_walk.png')
+        sprite_sheet = SpriteSheet('Players/p1_walk.png')
         image = sprite_sheet.get_image(0, 0, 30, 55)
         self.walking_frames_r.append(image)
         image = sprite_sheet.get_image(30, 0, 60, 55)
@@ -73,7 +73,7 @@ class Player(pygame.sprite.Sprite):
         # Move left/right
         self.rect.x += self.change_x
         pos = self.rect.x + self.level.world_shift
-        if self.direction = 'R':
+        if self.direction == 'R':
             frame = (pos // 30) % len(self.walking_frames_r)
             self.image = self.walking_frames_r[frame]
         else:
