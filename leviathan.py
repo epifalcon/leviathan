@@ -20,7 +20,7 @@ def main():
     player = Player()
 
     level_list = []
-    level_list.append(levels.Start_Menu(player))
+    #level_list.append(levels.Start_Menu(player))
     level_list.append(levels.Level_01(player))
 
     current_level_no = 0

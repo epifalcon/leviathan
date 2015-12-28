@@ -31,6 +31,8 @@ class Level():
 
 
     def draw(self, screen):
+        screen.fill(constants.BLACK)
+        screen.blit(self.background, (self.world_shift // 3, 0))
         self.platform_list.draw(screen)
         self.enemy_list.draw(screen)
 
@@ -69,9 +71,9 @@ class Level_01(Level):
         self.background.set_colorkey(constants.PINK)
         self.level_limit = -2500
 
-        level = [[platforms.GRASS_LEFT, 500, 500],
-                 [platforms.GRASS_MIDDLE, 570, 500],
-                 [platforms.GRASS_RIGHT, 640, 500]]
+        level = [[platforms.GRASS_LEFT, 300, 300],
+                 [platforms.GRASS_MIDDLE, 370, 300],
+                 [platforms.GRASS_RIGHT, 440, 300]]
 
         for platform in level:
             block = platforms.Platform(platform[0])
@@ -81,10 +83,10 @@ class Level_01(Level):
             self.platform_list.add(block)
 
         block = platforms.MovingPlatform(platforms.STONE_PLATFORM_MIDDLE)
-        block.rect.x = 1350
-        block.rect.y = 280
-        block.boundary_left = 1350
-        block.boundary_right = 1600
+        block.rect.x = 510
+        block.rect.y = 300
+        block.boundary_left = 510
+        block.boundary_right = 800
         block.change_x = 1
         block.player = self.player
         block.level = self
